@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import TodoItem from './TodoItem/TodoItem';
 
@@ -14,7 +14,7 @@ export interface AppState {
 
 function App() {
 
-  const [todos, setTodo] = useState<AppState["todos"]>([
+  const [todos, setTodos] = useState<AppState["todos"]>([
     {
       name: "Take out trash",
       id: 1,
