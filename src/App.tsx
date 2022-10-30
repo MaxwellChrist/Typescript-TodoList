@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import TodoItem from './TodoItem/TodoItem';
+
+export interface AppState {
+  todo: {
+      name: string
+      id: number
+      completed: boolean
+      note?: string
+  }[]
+}
+
 
 function App() {
+
+  const [todo, setTodo] = useState<AppState["todo"]>([
+    {
+      name: "Take out trash",
+      id: 1,
+      completed: false,
+      note: "Do it before garbage day on tuesday"
+    },
+    {
+      name: "Clean dishes",
+      id: 2,
+      completed: false,
+    }
+  ])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Todo List</h1>
+      <TodoItem todo={todo}/>
     </div>
   );
 }
