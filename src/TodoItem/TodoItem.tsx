@@ -10,11 +10,11 @@ const TodoItem: React.FC<AppState> = ({ todos }) => {
     const renderList = (): JSX.Element[] => {
         return todos.map(item => {
             return (
-                <li className="List">
+                <li key={item.id} className="List">
                     <div className="List-header">
                         <h2>{item.name}</h2>
                     </div>
-                    <p>Task completed: {item.completed ? <p>Yes</p> : <p>No</p>}</p>
+                    <p>Task completed: {item.completed ? `Yes` : `No`}</p>
                     <p className="List-note">{item.note}</p>
                 </li>
             )
