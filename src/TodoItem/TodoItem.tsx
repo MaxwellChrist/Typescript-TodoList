@@ -2,13 +2,13 @@ import React from 'react'
 import { AppState as Props } from "../App";
 
 interface AppState {
-    todo: Props["todo"]
+    todos: Props["todos"]
 }
 
-const TodoItem: React.FC<AppState> = ({ todo }) => {
+const TodoItem: React.FC<AppState> = ({ todos }) => {
 
     const renderList = (): JSX.Element[] => {
-        return todo.map(item => {
+        return todos.map(item => {
             return (
                 <li className="List">
                     <div className="List-header">

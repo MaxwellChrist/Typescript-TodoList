@@ -3,7 +3,7 @@ import './App.css';
 import TodoItem from './TodoItem/TodoItem';
 
 export interface AppState {
-  todo: {
+  todos: {
       name: string
       id: number
       completed: boolean
@@ -14,7 +14,7 @@ export interface AppState {
 
 function App() {
 
-  const [todo, setTodo] = useState<AppState["todo"]>([
+  const [todos, setTodo] = useState<AppState["todos"]>([
     {
       name: "Take out trash",
       id: 1,
@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <h1>Todo List</h1>
-      <TodoItem todo={todo}/>
+      <TodoItem todos={todos}/>
     </div>
   );
 }
